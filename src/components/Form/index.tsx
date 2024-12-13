@@ -23,47 +23,35 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
 
     switch (normalizedTable) {
       case 'clientes':
-        return 'https://localhost:7162/api/clientes';
+        return 'https://localhost:7162/api/Cliente';
       case 'pagamentos':
-        return 'https://localhost:7162/api/pagamentos';
+        return 'https://localhost:7162/api/Pagamento';
       case 'metodospagamento':
-        return 'https://localhost:7162/api/metodospagamento';
+        return 'https://localhost:7162/api/MetodosPagamento';
       case 'vagas':
-        return 'https://localhost:7162/api/vagas';
+        return 'https://localhost:7162/api/Vaga';
       case 'enderecos':
-        return 'https://localhost:7162/api/enderecos';
+        return 'https://localhost:7162/api/Endereco';
       case 'estacionamentos':
-        return 'https://localhost:7162/api/estacionamentos';
+        return 'https://localhost:7162/api/Estacionamento';
       case 'tiposveiculos':
         return 'https://localhost:7162/api/tiposveiculos';
-      case 'usuarios':
-        return 'https://localhost:7162/api/usuarios';
-      case 'cargos':
-        return 'https://localhost:7162/api/cargos';
-      case 'funcionarios':
-        return 'https://localhost:7162/api/funcionarios';
-      case 'faturas':
-        return 'https://localhost:7162/api/faturas';
-      case 'eventos':
-        return 'https://localhost:7162/api/eventos';
-      case 'observacoes':
-        return 'https://localhost:7162/api/observacoes';
       case 'telefones':
-        return 'https://localhost:7162/api/telefones';
+        return 'https://localhost:7162/api/Telefone';
       case 'reservas':
-        return 'https://localhost:7162/api/reservas'; 
+        return 'https://localhost:7162/api/Reserva'; 
       case 'veiculos':
-        return 'https://localhost:7162/api/veiculos'; 
+        return 'https://localhost:7162/api/Veiculos'; 
       case 'tipoveiculo':
-        return 'https://localhost:7162/api/tipoveiculo'; 
+        return 'https://localhost:7162/api/TipoVeiculo'; 
       case 'estadosbrasileiros':
-        return 'https://localhost:7162/api/estadosbrasileiros'; 
+        return 'https://localhost:7162/api/EstadosBrasileiros'; 
       case 'statusvaga':
-        return 'https://localhost:7162/api/statusvaga';
+        return 'https://localhost:7162/api/StatusVaga';
       case 'statusreserva':
-        return 'https://localhost:7162/api/statusreserva';
+        return 'https://localhost:7162/api/StatusReserva';
       case 'entradassaidas':
-        return 'https://localhost:7162/api/entradassaidas';
+        return 'https://localhost:7162/api/EntradaSaida';
       default:
         return '';
     }
@@ -89,6 +77,13 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
   const renderFormFields = () => {
     const normalizedTable = selectedTable.toLowerCase();
     switch (normalizedTable) {
+      case 'clientes':
+        return (
+          <>
+            <input type="text" name="Nome" placeholder="Nome do Cliente" onChange={handleChange} />
+            <input type="text" name="CPF" placeholder="CPF" onChange={handleChange} />
+          </>
+        );
       case 'pagamentos':
         return (
           <>
@@ -98,33 +93,12 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
             <input type="number" name="Valor" placeholder="Valor do Pagamento" onChange={handleChange} />
           </>
         );
-      case 'metodospagamento':
-        return (
-          <>
-            <input type="text" name="Descricao" placeholder="Descrição" onChange={handleChange} />
-          </>
-        );
       case 'vagas':
         return (
           <>
             <input type="number" name="IDEstacionamento" placeholder="ID do Estacionamento" onChange={handleChange} />
             <input type="number" name="IDTipoVeiculo" placeholder="ID do Tipo de Veículo" onChange={handleChange} />
             <input type="number" name="IDStatusVaga" placeholder="ID do Status da Vaga" onChange={handleChange} />
-          </>
-        );
-      case 'enderecos':
-        return (
-          <>
-            <input type="text" name="Rua" placeholder="Rua" onChange={handleChange} />
-            <input type="text" name="Cidade" placeholder="Cidade" onChange={handleChange} />
-            <input type="number" name="IDEstado" placeholder="ID do Estado" onChange={handleChange} />
-          </>
-        );
-      case 'clientes':
-        return (
-          <>
-            <input type="text" name="Nome" placeholder="Nome do Cliente" onChange={handleChange} />
-            <input type="text" name="CPF" placeholder="CPF" onChange={handleChange} />
           </>
         );
       case 'telefones':
@@ -150,40 +124,6 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
             <input type="text" name="Cor" placeholder="Cor do Veículo" onChange={handleChange} />
           </>
         );
-      case 'tipoveiculo':
-        return (
-          <>
-            <input type="text" name="TipoVeiculo" placeholder="Tipo de Veículo" onChange={handleChange} />
-            <input type="text" name="Descricao" placeholder="Descrição" onChange={handleChange} />
-          </>
-        );
-      case 'estadosbrasileiros':
-        return (
-          <>
-            <input type="text" name="NomeEstado" placeholder="Nome do Estado" onChange={handleChange} />
-            <input type="text" name="Sigla" placeholder="Sigla do Estado" onChange={handleChange} />
-          </>
-        );
-      case 'estacionamentos':
-        return (
-          <>
-            <input type="text" name="Nome" placeholder="Nome do Estacionamento" onChange={handleChange} />
-            <input type="text" name="CapacidadeTotal" placeholder="Capacidade Total" onChange={handleChange} />
-            <input type="number" name="IDEndereco" placeholder="ID do Endereço" onChange={handleChange} />
-          </>
-        );
-      case 'statusvaga':
-        return (
-          <>
-            <input type="text" name="StatusVaga" placeholder="Status da Vaga" onChange={handleChange} />
-          </>
-        );
-      case 'statusreserva':
-        return (
-          <>
-            <input type="text" name="StatusReserva" placeholder="Status da Reserva" onChange={handleChange} />
-          </>
-        );
       case 'entradassaidas':
         return (
           <>
@@ -193,6 +133,14 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
             <input type="number" name="IDVeiculo" placeholder="ID do Veículo" onChange={handleChange} />
             <input type="number" name="IDCliente" placeholder="ID do Cliente" onChange={handleChange} />
             <input type="number" name="IDPagamento" placeholder="ID do Pagamento" onChange={handleChange} />
+          </>
+        );
+      case 'estacionamentos':
+        return (
+          <>
+            <input type="text" name="Nome" placeholder="Nome do Estacionamento" onChange={handleChange} />
+            <input type="text" name="CapacidadeTotal" placeholder="Capacidade Total" onChange={handleChange} />
+            <input type="number" name="IDEndereco" placeholder="ID do Endereço" onChange={handleChange} />
           </>
         );
       default:
@@ -205,7 +153,7 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
       <form onSubmit={handleSubmit}>
         {renderFormFields()}
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <button type="submit">Enviar Dados</button>
+        <button className='buttonSave' type="submit">Salvar</button>
       </form>
     </div>
   );

@@ -30,7 +30,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onSelectTable }) => {
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
       <button className="toggle-btn" onClick={toggleSidebar}>
-        {isOpen ? '<-' : '->'} 
+        {isOpen ? '<' : '>'} 
       </button>
       <div className="content">
         <h3>Tabelas</h3>
