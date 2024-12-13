@@ -398,7 +398,7 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
                   {Object.values(record).map((value, i) => (
                     <td key={i}>{String(value)}</td> 
                   ))}
-                  <td>
+                  <td className='action-buttons'>
                     <button onClick={() => handleEdit(index)}>Editar</button>
                     <button onClick={() => handleDelete(index)}>Excluir</button>
                   </td>

@@ -62,29 +62,35 @@ input:focus {
 }
 
 .records-table table td button {
-  background-color: #333; /* Cor de fundo preta */
-  color: #fff; /* Cor do texto branca */
-  border: none;
-  border-radius: 5px; /* Bordas arredondadas */
-  padding: 8px 12px; /* Espaçamento interno */
-  margin: 0 5px; /* Espaçamento entre os botões */
+  background-color: #333; 
+  color: #fff; 
+  border-radius: 5px; 
+  padding: 8px 12px;
+  margin: 0 5px; 
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s;
 }
 
-.records-table table td button:hover {
-  background-color: #555; /* Cor de fundo ao passar o mouse */
+.action-buttons {
+  text-align: center;
 }
 
-.records-table table td {
-  text-align: center; /* Centraliza o conteúdo da célula */
+.action-buttons .edit-button,
+.action-buttons .delete-button {
+  background-color: #333; 
+  color: #fff; 
+  border: none;
+  border-radius: 5px; 
+  padding: 8px 12px; 
+  margin: 0 5px; 
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
-.records-table table td button:first-child {
-  margin-left: 0; /* Remove margem extra do primeiro botão */
+.action-buttons .edit-button:hover,
+.action-buttons .delete-button:hover {
+  background-color: #555; 
 }
 
-.records-table table td button:last-child {
-  margin-right: 0; /* Remove margem extra do último botão */
-}
