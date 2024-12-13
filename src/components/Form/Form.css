@@ -61,11 +61,15 @@ input:focus {
   transform: scale(0.98);
 }
 
+.bodyForm{
+  color: #000000;
+}
+
 .records-table table td button {
   background-color: #333; 
   color: #fff; 
   border-radius: 5px; 
-  padding: 8px 12px;
+  padding: 6px 10px;
   margin: 0 5px; 
   cursor: pointer;
   font-size: 14px;

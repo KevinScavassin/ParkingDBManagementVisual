@@ -383,7 +383,7 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
 
       <div className="records-table">
         {records.length > 0 && (
-          <table>
+          <table className='bodyForm'>
             <thead>
               <tr>
                 {Object.keys(records[0]).map((key) => (
@@ -392,7 +392,7 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
                 <th>Ações</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className='bodyForm'>
               {records.map((record, index) => (
                 <tr key={index}>
                   {Object.values(record).map((value, i) => (
