@@ -60,3 +60,31 @@ input:focus {
 .buttonSave:active {
   transform: scale(0.98);
 }
+
+.records-table table td button {
+  background-color: #333; /* Cor de fundo preta */
+  color: #fff; /* Cor do texto branca */
+  border: none;
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 8px 12px; /* Espaçamento interno */
+  margin: 0 5px; /* Espaçamento entre os botões */
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.records-table table td button:hover {
+  background-color: #555; /* Cor de fundo ao passar o mouse */
+}
+
+.records-table table td {
+  text-align: center; /* Centraliza o conteúdo da célula */
+}
+
+.records-table table td button:first-child {
+  margin-left: 0; /* Remove margem extra do primeiro botão */
+}
+
+.records-table table td button:last-child {
+  margin-right: 0; /* Remove margem extra do último botão */
+}
