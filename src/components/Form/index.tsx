@@ -51,19 +51,19 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
       case 'telefones':
         return 'https://localhost:7162/api/telefones';
       case 'reservas':
-        return 'https://localhost:7162/api/reservas'; // Caso adicionado para Reservas
+        return 'https://localhost:7162/api/reservas'; 
       case 'veiculos':
-        return 'https://localhost:7162/api/veiculos'; // Caso adicionado para Veículos
+        return 'https://localhost:7162/api/veiculos'; 
       case 'tipoveiculo':
-        return 'https://localhost:7162/api/tipoveiculo'; // Caso adicionado para Tipos de Veículo
+        return 'https://localhost:7162/api/tipoveiculo'; 
       case 'estadosbrasileiros':
-        return 'https://localhost:7162/api/estadosbrasileiros'; // Caso adicionado para Estados Brasileiros
+        return 'https://localhost:7162/api/estadosbrasileiros'; 
       case 'statusvaga':
-        return 'https://localhost:7162/api/statusvaga'; // Caso adicionado para Status Vaga
+        return 'https://localhost:7162/api/statusvaga';
       case 'statusreserva':
-        return 'https://localhost:7162/api/statusreserva'; // Caso adicionado para Status Reserva
+        return 'https://localhost:7162/api/statusreserva';
       case 'entradassaidas':
-        return 'https://localhost:7162/api/entradassaidas'; // Caso adicionado para Entradas/Saídas
+        return 'https://localhost:7162/api/entradassaidas';
       default:
         return '';
     }

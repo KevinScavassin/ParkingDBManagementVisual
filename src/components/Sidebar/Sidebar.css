@@ -2,19 +2,19 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh; /* Ocupa toda a altura da janela */
+  height: 100vh;
   background-color: #333;
   color: #fff;
   display: flex;
   flex-direction: column;
   transition: width 0.3s ease-in-out;
-  width: 250px; /* Largura inicial do sidebar */
-  overflow: hidden; /* Evitar transbordamento lateral */
-  z-index: 1000; /* Garantir que esteja sobre outros elementos */
+  width: 250px;
+  overflow: hidden;
+  z-index: 1000;
 }
 
 .sidebar.closed {
-  width: 50px; /* Largura quando o sidebar estiver fechado */
+  width: 50px;
 }
 
 .toggle-btn {
@@ -30,7 +30,7 @@
   position: absolute;
   top: 10px;
   z-index: 1;
-  right: -2px; /* Mantém o botão visível fora do sidebar */
+  right: -2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
 }
@@ -40,16 +40,16 @@
 }
 
 .sidebar .content {
-  flex-grow: 1; /* Ocupa o espaço restante */
+  flex-grow: 1;
   padding: 20px;
-  overflow-y: auto; /* Habilita o scroll vertical */
+  overflow-y: auto;
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
-  direction: rtl; /* Inverte a direção para colocar o scroll à esquerda */
+  direction: rtl;
 }
 
 .sidebar.closed .content {
-  opacity: 0; /* Esconde o conteúdo visualmente sem alterar o layout */
+  opacity: 0;
 }
 
 .sidebar .content h3 {
@@ -57,14 +57,14 @@
   font-size: 18px;
   font-weight: bold;
   color: #fff;
-  direction: ltr; /* Garante que o texto fique alinhado à esquerda */
+  direction: ltr;
 }
 
 .sidebar .content ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  direction: ltr; /* Garante que os itens fiquem alinhados corretamente */
+  direction: ltr;
 }
 
 .sidebar .content ul li {

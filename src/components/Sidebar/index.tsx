@@ -25,7 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onSelectTable }) => {
     { name: 'Estados Brasileiros', id: 'EstadosBrasileiros' },
   ];
 
-  const toggleSidebar = () => setIsOpen(!isOpen); // Alternar o estado do sidebar
+  const toggleSidebar = () => setIsOpen(!isOpen); 
 
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>

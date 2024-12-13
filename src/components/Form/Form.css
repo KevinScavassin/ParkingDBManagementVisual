@@ -2,18 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Alinha os elementos do topo para reduzir espaço vazio */
-  background-color: #d8d8d8;  /* Fundo cinza claro aplicado diretamente no container */
+  justify-content: flex-start;
+  background-color: #d8d8d8;
   border-radius: 10px;
   padding: 20px;
   width: 60vw;
-  max-width: 400px;  /* Largura máxima do formulário */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombras suaves */
-    
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 form {
-  width: 100%; /* Garantir que o formulário ocupe toda a largura do contêiner */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,10 +23,10 @@ input {
   width: 80%;
   padding: 12px;
   font-size: 16px;
-  margin-bottom: 15px; /* Espaçamento entre inputs */
+  margin-bottom: 15px;
   background-color: #fff;
   border-radius: 8px;
-  border: 1px solid #ddd; /* Borda sutil */
+  border: 1px solid #ddd;
   color: black;
   text-align: left;
 }
@@ -45,7 +44,7 @@ input:focus {
   width: 60%;
   padding: 12px;
   font-size: 16px;
-  background-color: #000000; /* Cor de fundo azul */
+  background-color: #000000;
   color: #fff;
   border-radius: 8px;
   border: none;
@@ -59,5 +58,5 @@ input:focus {
 }
 
 .buttonSave:active {
-  transform: scale(0.98);  /* Efeito de clique */
+  transform: scale(0.98);
 }
