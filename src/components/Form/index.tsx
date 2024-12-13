@@ -12,11 +12,12 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  useEffect(() => {
-    setFormData({});
-    setErrorMessage(null);
-    setEditingIndex(null);
-  }, [selectedTable]);
+ useEffect(() => {
+  setFormData({});
+  setErrorMessage(null);
+  setEditingIndex(null);
+  setRecords([]); 
+}, [selectedTable]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -382,8 +383,8 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
       </form>
 
       <div className="records-table">
-        {records.length > 0 && (
-          <table className='bodyForm'>
+        {records.length > 0 ? (
+          <table className="bodyForm">
             <thead>
               <tr>
                 {Object.keys(records[0]).map((key) => (
@@ -392,13 +393,13 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
                 <th>Ações</th>
               </tr>
             </thead>
-            <tbody className='bodyForm'>
+            <tbody>
               {records.map((record, index) => (
                 <tr key={index}>
-                  {Object.values(record).map((value, i) => (
-                    <td key={i}>{String(value)}</td> 
+                  {Object.keys(record).map((key, i) => (
+                    <td key={i}>{record[key] !== null ? String(record[key]) : 'N/A'}</td>
                   ))}
-                  <td className='action-buttons'>
+                  <td className="action-buttons">
                     <button onClick={() => handleEdit(index)}>Editar</button>
                     <button onClick={() => handleDelete(index)}>Excluir</button>
                   </td>
@@ -406,6 +407,8 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
               ))}
             </tbody>
           </table>
+        ) : (
+          <p>Nenhum registro encontrado para a tabela selecionada.</p>
         )}
       </div>
     </div>
