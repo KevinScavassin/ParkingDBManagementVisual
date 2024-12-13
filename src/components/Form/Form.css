@@ -1,0 +1,63 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Alinha os elementos do topo para reduzir espaço vazio */
+  background-color: #d8d8d8;  /* Fundo cinza claro aplicado diretamente no container */
+  border-radius: 10px;
+  padding: 20px;
+  width: 60vw;
+  max-width: 400px;  /* Largura máxima do formulário */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+    
+}
+
+form {
+  width: 100%; /* Garantir que o formulário ocupe toda a largura do contêiner */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  width: 80%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 15px; /* Espaçamento entre inputs */
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd; /* Borda sutil */
+  color: black;
+  text-align: left;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4e90a7;
+}
+
+.buttonSave {
+  width: 60%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #000000; /* Cor de fundo azul */
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.buttonSave:hover {
+  background-color: #00fd1e;
+}
+
+.buttonSave:active {
+  transform: scale(0.98);  /* Efeito de clique */
+}

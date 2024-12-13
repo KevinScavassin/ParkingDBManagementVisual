@@ -1,0 +1,107 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Ocupa toda a altura da janela */
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease-in-out;
+  width: 250px; /* Largura inicial do sidebar */
+  overflow: hidden; /* Evitar transbordamento lateral */
+  z-index: 1000; /* Garantir que esteja sobre outros elementos */
+}
+
+.sidebar.closed {
+  width: 50px; /* Largura quando o sidebar estiver fechado */
+}
+
+.toggle-btn {
+  background-color: #444;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-end;
+  margin: 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  z-index: 1;
+  right: -2px; /* Mantém o botão visível fora do sidebar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #555;
+}
+
+.sidebar .content {
+  flex-grow: 1; /* Ocupa o espaço restante */
+  padding: 20px;
+  overflow-y: auto; /* Habilita o scroll vertical */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  direction: rtl; /* Inverte a direção para colocar o scroll à esquerda */
+}
+
+.sidebar.closed .content {
+  opacity: 0; /* Esconde o conteúdo visualmente sem alterar o layout */
+}
+
+.sidebar .content h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  direction: ltr; /* Garante que o texto fique alinhado à esquerda */
+}
+
+.sidebar .content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  direction: ltr; /* Garante que os itens fiquem alinhados corretamente */
+}
+
+.sidebar .content ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar .content ul li button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar .content ul li button:hover {
+  background-color: #444;
+  color: #ddd;
+}
+
+.sidebar .content ul li button:focus {
+  outline: none;
+}
+
+.sidebar .content ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.sidebar .content ul li a:hover {
+  color: #aaa;
+  text-decoration: underline;
+}
