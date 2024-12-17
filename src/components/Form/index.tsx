@@ -36,7 +36,7 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
       case 'pagamentos':
         return 'https://localhost:7162/api/Pagamento';
       case 'metodospagamento':
-        return 'https://localhost:7162/api/MetodosPagamento';
+        return 'https://localhost:7162/api/MetodoPagamento';
       case 'vagas':
         return 'https://localhost:7162/api/Vaga';
       case 'enderecos':
@@ -144,13 +144,6 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
               onChange={handleChange}
               value={formData.MetodoPagamentoId || ''}
             />
-            <input
-              type="number"
-              name="ClienteId"
-              placeholder="ID do Cliente"
-              onChange={handleChange}
-              value={formData.ClienteId || ''}
-            />
           </>
         );
       case 'metodospagamento':
@@ -169,18 +162,25 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
         return (
           <>
             <input
-              type="text"
-              name="Descricao"
-              placeholder="Descrição da Vaga"
+              type="number"
+              name="EstacionamentoId"
+              placeholder="ID do Estacionamento"
               onChange={handleChange}
-              value={formData.Descricao || ''}
+              value={formData.EstacionamentoId || ''}
             />
             <input
               type="number"
-              name="Status"
-              placeholder="Status da Vaga"
+              name="TipoVeiculoId"
+              placeholder="ID do Tipo de Veiculo"
               onChange={handleChange}
-              value={formData.Status || ''}
+              value={formData.TipoVeiculoId || ''}
+            />
+            <input
+              type="number"
+              name="StatusVagaId"
+              placeholder="ID do Status da Vaga"
+              onChange={handleChange}
+              value={formData.StatusVagaId || ''}
             />
           </>
         );
@@ -189,10 +189,10 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
           <>
             <input
               type="text"
-              name="Logradouro"
-              placeholder="Logradouro"
+              name="Rua"
+              placeholder="Rua"
               onChange={handleChange}
-              value={formData.Logradouro || ''}
+              value={formData.Rua || ''}
             />
             <input
               type="text"
@@ -200,6 +200,34 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
               placeholder="Número"
               onChange={handleChange}
               value={formData.Numero || ''}
+            />
+            <input
+              type="text"
+              name="Complemento"
+              placeholder="Complemento"
+              onChange={handleChange}
+              value={formData.Complemento || ''}
+            />
+            <input
+              type="text"
+              name="Cep"
+              placeholder="Cep"
+              onChange={handleChange}
+              value={formData.Cep || ''}
+            />
+            <input
+              type="text"
+              name="Cidade"
+              placeholder="Cidade"
+              onChange={handleChange}
+              value={formData.Cidade || ''}
+            />
+            <input
+              type="number"
+              name="EstadoId"
+              placeholder="ID do Estado"
+              onChange={handleChange}
+              value={formData.EstadoId || ''}
             />
           </>
         );
@@ -214,11 +242,11 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
               value={formData.Nome || ''}
             />
             <input
-              type="text"
-              name="CNPJ"
-              placeholder="CNPJ do Estacionamento"
+              type="number"
+              name="Capacidade"
+              placeholder="Capacidade do Estacionamento"
               onChange={handleChange}
-              value={formData.CNPJ || ''}
+              value={formData.Capacidade || ''}
             />
             <input
               type="number"
@@ -227,18 +255,18 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
               onChange={handleChange}
               value={formData.EnderecoId || ''}
             />
-            <input
-              type="text"
-              name="Telefone"
-              placeholder="Telefone de Contato"
-              onChange={handleChange}
-              value={formData.Telefone || ''}
-            />
           </>
         );
       case 'telefones':
         return (
           <>
+            <input
+              type="text"
+              name="DDD"
+              placeholder="DDD"
+              onChange={handleChange}
+              value={formData.DDD || ''}
+            />
             <input
               type="text"
               name="Numero"
@@ -247,7 +275,7 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
               value={formData.Numero || ''}
             />
             <input
-              type="text"
+              type="number"
               name="ClienteId"
               placeholder="ID do Cliente"
               onChange={handleChange}
@@ -259,11 +287,11 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
         return (
           <>
             <input
-              type="text"
-              name="ReservaCodigo"
-              placeholder="Código da Reserva"
+              type="datetime-local"
+              name="DataHoraEntrada"
+              placeholder="DataHoraEntrada"
               onChange={handleChange}
-              value={formData.ReservaCodigo || ''}
+              value={formData.DataHoraEntrada || ''}
             />
             <input
               type="text"
@@ -271,6 +299,20 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
               placeholder="ID do Cliente"
               onChange={handleChange}
               value={formData.ClienteId || ''}
+            />
+            <input
+              type="text"
+              name="VagaId"
+              placeholder="ID da Vaga"
+              onChange={handleChange}
+              value={formData.VagaId || ''}
+            />
+            <input
+              type="text"
+              name="StatusReservaId"
+              placeholder="ID do Status da Reserva"
+              onChange={handleChange}
+              value={formData.StatusReservaId || ''}
             />
           </>
         );
@@ -286,10 +328,31 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
             />
             <input
               type="text"
+              name="Cor"
+              placeholder="Cor do Veículo"
+              onChange={handleChange}
+              value={formData.Cor || ''}
+            />
+            <input
+              type="text"
               name="Modelo"
               placeholder="Modelo do Veículo"
               onChange={handleChange}
               value={formData.Modelo || ''}
+            />
+            <input
+              type="number"
+              name="ClienteId"
+              placeholder="ID do Cliente"
+              onChange={handleChange}
+              value={formData.ClienteId || ''}
+            />
+            <input
+              type="number"
+              name="TipoVeiculoId"
+              placeholder="ID do TipoVeiculo"
+              onChange={handleChange}
+              value={formData.TipoVeiculoId || ''}
             />
           </>
         );
@@ -310,17 +373,17 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
           <>
             <input
               type="text"
+              name="UF"
+              placeholder="Sigla do Estado"
+              onChange={handleChange}
+              value={formData.UF || ''}
+            />
+            <input
+              type="text"
               name="Nome"
               placeholder="Nome do Estado"
               onChange={handleChange}
               value={formData.Nome || ''}
-            />
-            <input
-              type="text"
-              name="Sigla"
-              placeholder="Sigla do Estado"
-              onChange={handleChange}
-              value={formData.Sigla || ''}
             />
           </>
         );
@@ -352,18 +415,46 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
         return (
           <>
             <input
-              type="text"
+              type="datetime-local"
               name="Entrada"
               placeholder="Horário de Entrada"
               onChange={handleChange}
               value={formData.Entrada || ''}
             />
             <input
-              type="text"
+              type="datetime-local"
               name="Saida"
               placeholder="Horário de Saída"
               onChange={handleChange}
               value={formData.Saida || ''}
+            />
+            <input
+              type="text"
+              name="VagaId"
+              placeholder="ID da Vaga"
+              onChange={handleChange}
+              value={formData.VagaId || ''}
+            />
+            <input
+              type="text"
+              name="VeiculoId"
+              placeholder="ID do Veiculo"
+              onChange={handleChange}
+              value={formData.VeiculoId || ''}
+            />
+            <input
+              type="text"
+              name="ClienteId"
+              placeholder="ID do Cliente"
+              onChange={handleChange}
+              value={formData.ClienteId || ''}
+            />
+            <input
+              type="text"
+              name="PagamentoId"
+              placeholder="ID do Pagamento"
+              onChange={handleChange}
+              value={formData.PagamentoId || ''}
             />
           </>
         );
@@ -372,40 +463,55 @@ const Form: React.FC<FormProps> = ({ selectedTable }) => {
     }
   };
 
-  return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit}>
-        {renderFormFields()}
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <button className="buttonSave" type="submit">
-          {editingIndex !== null ? 'Atualizar' : 'Salvar'}
-        </button>
-      </form>
+  const allKeys = Array.from(
+    new Set(records.flatMap((record) => Object.keys(record)))
+  );
 
+  return (
+    <div className="FormInteiro">
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          {renderFormFields()}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          <button className="buttonSave" type="submit">
+            {editingIndex !== null ? 'Atualizar' : 'Salvar'}
+          </button>
+        </form>
+      </div>
       <div className="records-table">
         {records.length > 0 ? (
           <table className="bodyForm">
             <thead>
-              <tr>
-                {Object.keys(records[0]).map((key) => (
-                  <th key={key}>{key}</th>
-                ))}
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              {records.map((record, index) => (
-                <tr key={index}>
-                  {Object.keys(record).map((key, i) => (
-                    <td key={i}>{record[key] !== null ? String(record[key]) : 'N/A'}</td>
-                  ))}
-                  <td className="action-buttons">
-                    <button onClick={() => handleEdit(index)}>Editar</button>
-                    <button onClick={() => handleDelete(index)}>Excluir</button>
-                  </td>
-                </tr>
+            <tr>
+              {allKeys.map((key, index) => (
+                <th key={index}>{key}</th>
               ))}
-            </tbody>
+              <th>Ações</th>
+            </tr>
+            </thead>
+          <tbody>
+            {records.map((record, rowIndex) => (
+              <tr key={rowIndex}>
+                {allKeys.map((key, colIndex) => (
+                  <td
+                    key={colIndex}
+                    className={
+                      record[key] === null || record[key] === "" ? "null-value" : ""
+                    }
+                  >
+                    {record[key] !== null && record[key] !== ""
+                      ? String(record[key])
+                      : "N/A"}
+                  </td>
+                ))}
+                <td className="action-buttons">
+                  <button onClick={() => handleEdit(rowIndex)}>Editar</button>
+                  <button onClick={() => handleDelete(rowIndex)}>Excluir</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+
           </table>
         ) : (
           <p>Nenhum registro encontrado para a tabela selecionada.</p>

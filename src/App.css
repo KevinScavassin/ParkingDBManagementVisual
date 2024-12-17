@@ -13,7 +13,7 @@
   height: 100vh;
   background-color: #222;
   color: #fff;
-  background-image: url('./public/ParkingLotFundo.jpg');
+  background-image: url('/ParkingLotFundo.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

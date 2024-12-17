@@ -61,40 +61,68 @@ input:focus {
   transform: scale(0.98);
 }
 
-.bodyForm{
+.bodyForm {
+  margin-top: 50px;
   color: #000000;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background-color: #fff; /* Fundo branco atrás das informações */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  border-radius: 6px; /* Borda arredondada */
+  overflow: hidden;
 }
 
-.records-table table td button {
-  background-color: #333; 
-  color: #fff; 
-  border-radius: 5px; 
-  padding: 6px 10px;
-  margin: 0 5px; 
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
-}
-
-.action-buttons {
+.bodyForm th, .bodyForm td {
+  border: 1px solid #ddd;
+  padding: 10px;
   text-align: center;
 }
 
-.action-buttons .edit-button,
-.action-buttons .delete-button {
-  background-color: #333; 
-  color: #fff; 
+/* Cabeçalho da tabela */
+.bodyForm thead th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Valores nulos (corrigidos) */
+.bodyForm tbody td.null-value {
+  background-color: #ffefef; /* Cor de fundo suave */
+  color: #d9534f;           /* Texto em vermelho */
+  font-style: italic;
+}
+
+/* Botões na coluna Ações */
+.action-buttons button {
+  padding: 6px 12px;
+  margin: 2px;
   border: none;
-  border-radius: 5px; 
-  padding: 8px 12px; 
-  margin: 0 5px; 
   cursor: pointer;
+  border-radius: 4px;
+  color: white;
   font-size: 14px;
-  transition: background-color 0.3s;
 }
 
-.action-buttons .edit-button:hover,
-.action-buttons .delete-button:hover {
-  background-color: #555; 
+.action-buttons button:first-child {
+  background-color: #5bc0de; /* Editar - azul */
 }
 
+.action-buttons button:first-child:hover {
+  background-color: #31b0d5;
+}
+
+.action-buttons button:last-child {
+  background-color: #d9534f; /* Excluir - vermelho */
+}
+
+.action-buttons button:last-child:hover {
+  background-color: #c9302c;
+}
+
+.records-table p {
+  margin-top: 10px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
